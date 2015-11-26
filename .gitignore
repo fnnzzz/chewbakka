@@ -1,0 +1,16 @@
+*.pyc
+*.pyo
+
+env/
+logs/
+media/
+*/*/media
+pids/
+static_content/
+celerybeat-schedule
+
+db.*
+
+.DS_Store
+.DS_Store?
+._*
