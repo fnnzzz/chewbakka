@@ -1,0 +1,232 @@
+{% extends "_base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+	
+<div class="jumbotron">
+  <div class="container">
+	<h1 class="jumbotron__title"><span class="jumbotron__chew">Chewbakkka</span> say:  “<span class="jumbotron__quote">{{chew_say}}</span>”</h1>
+		<!-- <span class="jumbotron__tab">hello : true,</span><br> -->
+  </div>
+</div>
+
+<div class="container">
+	
+	<div class="row">
+		
+		<div class="col-lg-12">
+
+<!--         <div class="page-header">
+          <h1 class="title_opensans">3 последних баннера</h1>
+        </div>
+
+		<table class="table bannerstable"> 
+			<thead> 
+				<tr> 
+					<th>#</th> 
+					<th>Название</th> 
+					<th class="text-center">Ссылка на SAMBA</th> 
+					<th class="text-center">Скачать zip</th> 
+				</tr> 
+			</thead> 
+
+			<tbody> 
+				<tr> 
+					<th scope="row">1</th> 
+					<td>Lenovo vibe s1 p1</td> 
+					<td><input type="text" readonly class="form-control input__sambalink" value="\\SAMBA\Lenovo\banner"></td> 
+					<td class="text-center"><a href="#"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+				</tr>
+				<tr> 
+					<th scope="row">1</th> 
+					<td>Lenovo vibe s1 p1</td> 
+					<td><input type="text" readonly class="form-control input__sambalink" value="\\SAMBA\Lenovo\banner"></td> 
+					<td class="text-center"><a href="#"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+				</tr>
+				<tr> 
+					<th scope="row">1</th> 
+					<td>Lenovo vibe s1 p1</td> 
+					<td><input type="text" readonly class="form-control input__sambalink" value="\\SAMBA\Lenovo\banner"></td> 
+					<td class="text-center"><a href="#"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+				</tr>
+			</tbody> 
+		</table> -->
+
+		</div>
+
+		<br>
+
+		<div class="col-lg-12">
+
+		<div class="form__status-message {{form_status_class}} alert alert-{{form_status}}" role="alert">{{form_status_msg}}</div>
+
+
+        <div class="page-header">
+          <h1 class="title_opensans">Прошить баннер</h1>
+        </div>
+
+			
+			<div class="bs-component">
+              <ul class="nav nav-tabs">
+                <li class="dropdown active">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    Admixer <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="active"><a href="#admixer_default" data-toggle="tab">Default</a></li>
+                    <!-- <li class="divider"></li> -->
+                    <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    Adriver <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
+                    <!-- <li class="divider"></li> -->
+                    <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    Holder <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
+                    <!-- <li class="divider"></li> -->
+                    <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
+                  </ul>
+                </li>
+	
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    Adfox <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+
+
+
+
+
+
+              <div id="myTabContent" class="tab-content">
+
+                <div class="tab-pane fade in active" id="admixer_default">
+                  <br><h2>Admixer Default <a href="#" class="label label-default text__ttlabel">TT</a></h2><br><br>
+					
+
+					<!-- Admixer Default -->
+					<form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+					  
+					  {% csrf_token %}
+					  <input type="hidden" name="banner_type" value="admixer_default">
+
+					  <div class="form-group">
+					    <input type="file" name="banner_file" id="file_banner_zip">
+					    <p class="help-block">баннер должен быть в zip</p>
+					  </div>
+					  <br>
+					  <div class="form-group">
+					    <input type="text" name="banner_link" class="form-control" placeholder="Ссылка перехода (необязательно)">
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-md">Прошить</button>
+					</form>
+                </div>
+
+
+
+                <div class="tab-pane fade" id="admixer_catfish">
+
+                	<br><h2>Admixer CatFish <a href="#" class="label label-default text__ttlabel">TT</a></h2><br><br>
+
+					<form>
+					  
+					  <input type="hidden" name="banner_type" value="admixer_catfish">
+
+					  <div class="form-group">
+					    <input type="file" id="file_banner_zip">
+					    <p class="help-block">баннер должен быть в zip {{status}}</p>
+					  </div>
+					  <br>
+					  <div class="form-group-inline">
+					    <p class="help-block">положение по вертикали <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></p>
+						<select name="v-align" class="form-control">
+						  <option selected>bottom</option>
+						  <option>center</option>
+						  <option>top</option>
+						</select>
+					  </div>
+					  <div class="form-group-inline">
+					    <p class="help-block">положение по горизонтали <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></p>
+						<select name="h-align" class="form-control">
+						  <option selected>center</option>
+						  <option>left</option>
+						  <option>right</option>
+						</select>
+					  </div>
+
+					  <br>
+
+<!-- 					  <div class="form-group form__with-radio">
+					    <input name="banner_width" type="number" min=0 max=999999 class="form-control" required placeholder="Ширина">
+						<label class="radio-inline">
+						  <input type="radio" name="width_unit_radio" checked value="%"> %
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="width_unit_radio" value="px"> px
+						</label>
+					      <p class="help-block"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> указывай 100% если кетфиш горизонтальный</p>
+					  </div> -->
+<!-- 					  <div class="form-group form__with-radio">
+					    <input name="banner_height" type="number" min=0 max=999999 class="form-control" required placeholder="Высота">
+						<label class="radio-inline">
+						  <input type="radio" name="height_unit_radio" value="%"> %
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="height_unit_radio" checked value="px"> px
+						</label>
+					      <p class="help-block"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> указывай 100% если кетфиш вертикальный</p>
+					  </div> -->
+
+					  <div class="form-group">
+					    <input type="text" name="banner_link" class="form-control" placeholder="Ссылка перехода (необязательно)">
+					  </div>
+					  <div class="form-group">
+					    <p class="help-block">имя картинки с крестиком <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span></p>
+					    <input type="text" name="banner_close" class="form-control" required value="close.png">
+					  </div>
+					  <br>
+					  <button type="submit" class="btn btn-primary btn-md">Прошить</button>
+					</form>
+
+                </div>
+
+
+              </div>
+            </div>
+
+
+		</div>
+
+	</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock content %}

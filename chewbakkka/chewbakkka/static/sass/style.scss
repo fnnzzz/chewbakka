@@ -1,0 +1,95 @@
+// @import 'normalize';
+@import '../bourbon/app/assets/stylesheets/bourbon';  
+@import 'fonts';
+
+// <mixins>
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
+// </mixins>
+
+// <vars>
+$cool-color: #212121;
+$font-open-sans: 'Open Sans', sans-serif;
+$font-helvetica-light: 'HelveticaLight', sans-serif;
+// </vars>
+
+.-outline{
+	outline: 1px solid red;
+}
+
+body{
+  font-family: $font-helvetica-light;
+  // height: 2500px;
+}
+
+#loader {
+    background: none repeat scroll 0 0 #ffffff;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.jumbotron{
+  &__title{
+      font-family: $font-open-sans;
+  }
+  &__tab{
+    padding-left: 80px;
+  }
+  &__chew{
+    border-bottom: 5px dotted #ccc;
+  }
+}
+
+.form{
+  &__with-radio{
+    .radio-inline{
+      margin-top: 5px;
+    }
+  }
+
+  &__status-message{
+    display: none;
+    &-show{
+      display: block;
+    }
+  }
+}
+
+
+.text{
+  &__ttlabel{
+    padding-top: 12px;
+  }
+}
+
+.bannerstable>tbody>tr>td, 
+.bannerstable>tbody>tr>th, 
+.bannerstable>tfoot>tr>td, 
+.bannerstable>tfoot>tr>th, 
+.bannerstable>thead>tr>td, 
+.bannerstable>thead>tr>th{
+  vertical-align: middle;
+}

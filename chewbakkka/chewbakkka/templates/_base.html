@@ -1,0 +1,61 @@
+{% load staticfiles %}
+{% load pipeline %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chewbakkka</title>
+	
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	{% stylesheet 'libs_css' %}
+	{% stylesheet 'main_css' %}
+
+</head>
+<body>
+
+	<div class="container-fluid">
+	    <div class="navbar-header">
+	      <a href="../" class="navbar-brand">Chewbakkka : pre-alpha</a>
+	    </div>
+
+	    <div class="navbar-collapse collapse" id="navbar-main">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li>
+	          <a href="#">Прошить баннер</a>
+	        </li>
+	        <li>
+	          <a href="#">Готовые баннеры</a>
+	        </li>
+	        <li>
+	          <li class="dropdown">
+	          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Список ТТ <span class="caret"></span></a>
+	          <ul class="dropdown-menu" aria-labelledby="themes">
+	            <li><a href="#">Admixer</a></li>
+	            <li><a href="#">Adriver</a></li>
+	            <li><a href="#">Holder</a></li>
+	            <li><a href="#">Adfox</a></li>
+	          </ul>
+	        </li>
+	        </li>
+	      </ul>
+	    </div>
+	</div>
+
+  	{% block content %}{% endblock content %}
+
+	<div id="loader">
+		<!-- ama preloader-->
+	</div> 
+	
+	{% javascript 'libs_js' %}
+	{% javascript 'main_js' %}
+
+	<!--[if lt IE 9]>
+		{% javascript 'ie_js' %}
+	<![endif]-->
+	
+</body>
+</html>

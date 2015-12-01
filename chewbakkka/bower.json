@@ -1,0 +1,26 @@
+{
+  "name": "Vlad bower.json",
+  "version": "0.0.1",
+  "authors": [
+    "Vlad Feninets <vlad-josef@ukr.net>"
+  ],
+  "description": "for my personal django-boilerplate",
+  "main": "bower.json",
+  "keywords": [
+    "ITCG",
+    "bower",
+    "django",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "homepage": "http://itcg.ua",
+  "private": true,
+  "devDependencies": {
+    "jquery": "jquery#~2.1.4",
+    "html5shiv": "~3.7.3",
+    "Respond": "~1.4.2",
+    "fontawesome": "~4.4.0",
+    "bourbon": "~4.2.6",
+    "bootstrap": "~3.3.6"
+  }
+}
