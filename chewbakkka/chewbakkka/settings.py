@@ -161,6 +161,8 @@ INSTALLED_APPS = (
     # 'sorl.thumbnail',
     'pipeline',
 
+    'apps.chewbakkka_app',
+
     # 'djcelery',
     # 'djkombu',
 
@@ -175,42 +177,50 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 PIPELINE_CSS = {
-    'style_css': {
+    'main_css': {
         'source_filenames': (
-          # 'css/style.css',
-          # 'css/style.less',
-          # 'css/*.less',
+          'sass/style.scss',
         ),
-        'output_filename': 'css/style.css',
+        'output_filename': 'css/main.css',
         'variant': 'datauri',
     },  
-    'bower_css': {
+    'libs_css': {
         'source_filenames': (
-          # 'bootstrap/dist/css/bootstrap.css',
+          'bootstrap/dist/css/bootstrap.min.css',
+          'bootstrap/dist/css/bootstrap-theme.min.css',
+          'fontawesome/scss/font-awesome.scss',
         ),
-        'output_filename': 'css/bower.css',
+        'output_filename': 'css/libs.css',
         'variant': 'datauri',
     }
 }
 
 PIPELINE_JS = {
-    'script_js': {
+    'main_js': {
         'source_filenames': (
-          # 'js/script.js',
+          'js/common.js',
         ),
-        'output_filename': 'js/script.js',
+        'output_filename': 'js/main.js',
     },
-    'bower_js': {
+    'libs_js': {
         'source_filenames': (
+          'jquery/dist/jquery.min.js',
+          'bootstrap/dist/js/bootstrap.min.js',
         ),
-        'output_filename': 'js/bower.js',
+        'output_filename': 'js/libs.js',
     },
+     'ie_js': {
+        'source_filenames': (
+          'html5shiv/dist/html5shiv.min.js',
+          'Respond/dest/respond.min.js',
+        ),
+        'output_filename': 'js/ie.js',
+     },
 }
 
 
 PIPELINE_COMPILERS = (
-  'pipeline.compilers.less.LessCompiler',
-  'pipeline.compilers.coffee.CoffeeScriptCompiler',
+  'pipeline.compilers.sass.SASSCompiler',
 )
 
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
