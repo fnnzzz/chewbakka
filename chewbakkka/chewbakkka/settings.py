@@ -59,16 +59,16 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#         'NAME': 'DB_NAME',                      # Or path to database file if using sqlite3.
-#         'USER': 'www',                      # Not used with sqlite3.
-#         'PASSWORD': '',                  # Not used with sqlite3.
-#         'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-#         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'chewbakkka',                      # Or path to database file if using sqlite3.
+        'USER': 'www',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
@@ -199,6 +199,7 @@ PIPELINE_JS = {
     'main_js': {
         'source_filenames': (
           'js/common.js',
+          'js/script.es6',
         ),
         'output_filename': 'js/main.js',
     },
@@ -221,6 +222,7 @@ PIPELINE_JS = {
 
 PIPELINE_COMPILERS = (
   'pipeline.compilers.sass.SASSCompiler',
+  'pipeline.compilers.es6.ES6Compiler',
 )
 
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'

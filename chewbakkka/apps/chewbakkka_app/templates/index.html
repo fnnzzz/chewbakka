@@ -5,7 +5,9 @@
 	
 <div class="jumbotron">
   <div class="container">
-	<h1 class="jumbotron__title"><span class="jumbotron__chew">Chewbakkka</span> say:  “<span class="jumbotron__quote">{{chew_say}}</span>”</h1>
+	<h1 class="jumbotron__title">
+		<span class="jumbotron__chew">Chewbakkka</span> say:  “<span class="jumbotron__quote">{{ hello_message }}</span>”
+	</h1>
 		<!-- <span class="jumbotron__tab">hello : true,</span><br> -->
   </div>
 </div>
@@ -58,7 +60,7 @@
 
 		<div class="col-lg-12">
 
-		<div class="form__status-message {{form_status_class}} alert alert-{{form_status}}" role="alert">{{form_status_msg}}</div>
+		<!-- <div class="form__status-message {{form_status_class}} alert alert-{{form_status}}" role="alert">{{form_status_msg}}</div> -->
 
 
         <div class="page-header">
@@ -126,8 +128,7 @@
 					
 
 					<!-- Admixer Default -->
-					<form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
-					  
+					<form action="{% url 'do-banner' area='admixer' format='default' %}" method="post" enctype="multipart/form-data">
 					  {% csrf_token %}
 					  <input type="hidden" name="banner_type" value="admixer_default">
 
