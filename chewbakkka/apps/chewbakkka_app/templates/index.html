@@ -81,38 +81,38 @@
                   </ul>
                 </li>
 
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    Adriver <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
-                    <!-- <li class="divider"></li> -->
-                    <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
-                  </ul>
-                </li>
-
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    Holder <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
-                    <!-- <li class="divider"></li> -->
-                    <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
-                  </ul>
-                </li>
-	
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    Adfox <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
-                  </ul>
-                </li>
+               <!--  <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                   Adriver <span class="caret"></span>
+                 </a>
+                 <ul class="dropdown-menu">
+                   <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
+                   <li class="divider"></li>
+                   <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
+                 </ul>
+               </li>
+               
+               <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                   Holder <span class="caret"></span>
+                 </a>
+                 <ul class="dropdown-menu">
+                   <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
+                   <li class="divider"></li>
+                   <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
+                 </ul>
+               </li>
+               	
+               <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                   Adfox <span class="caret"></span>
+                 </a>
+                 <ul class="dropdown-menu">
+                   <li><a href="#admixer_catfish" data-toggle="tab">CatFish</a></li>
+                   <li class="divider"></li>
+                   <li><a href="#admixer_default" data-toggle="tab">Default</a></li>
+                 </ul>
+               </li> -->
 
               </ul>
 
@@ -128,10 +128,8 @@
 					
 
 					<!-- Admixer Default -->
-					<form action="{% url 'do-banner' area='admixer' format='default' %}" method="post" enctype="multipart/form-data">
+					<form action="{% url 'do-banner' area='admixer' format='default' %}" method="post" enctype="multipart/form-data" class="bannerform">
 					  {% csrf_token %}
-					  <input type="hidden" name="banner_type" value="admixer_default">
-
 					  <div class="form-group">
 					    <input type="file" name="banner_file" id="file_banner_zip">
 					    <p class="help-block">баннер должен быть в zip</p>
@@ -150,18 +148,16 @@
 
                 	<br><h2>Admixer CatFish <a href="#" class="label label-default text__ttlabel">TT</a></h2><br><br>
 
-					<form>
-					  
-					  <input type="hidden" name="banner_type" value="admixer_catfish">
-
+					<form action="{% url 'do-banner' area='admixer' format='catfish' %}" method="post" enctype="multipart/form-data" class="bannerform">
+					  {% csrf_token %}
 					  <div class="form-group">
-					    <input type="file" id="file_banner_zip">
-					    <p class="help-block">баннер должен быть в zip {{status}}</p>
+					    <input type="file" name="banner_file" id="file_banner_zip">
+					    <p class="help-block">баннер должен быть в zip</p>
 					  </div>
 					  <br>
 					  <div class="form-group-inline">
 					    <p class="help-block">положение по вертикали <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></p>
-						<select name="v-align" class="form-control">
+						<select name="banner_valign" class="form-control">
 						  <option selected>bottom</option>
 						  <option>center</option>
 						  <option>top</option>
@@ -169,36 +165,13 @@
 					  </div>
 					  <div class="form-group-inline">
 					    <p class="help-block">положение по горизонтали <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></p>
-						<select name="h-align" class="form-control">
+						<select name="banner_halign" class="form-control">
 						  <option selected>center</option>
 						  <option>left</option>
 						  <option>right</option>
 						</select>
 					  </div>
-
 					  <br>
-
-<!-- 					  <div class="form-group form__with-radio">
-					    <input name="banner_width" type="number" min=0 max=999999 class="form-control" required placeholder="Ширина">
-						<label class="radio-inline">
-						  <input type="radio" name="width_unit_radio" checked value="%"> %
-						</label>
-						<label class="radio-inline">
-						  <input type="radio" name="width_unit_radio" value="px"> px
-						</label>
-					      <p class="help-block"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> указывай 100% если кетфиш горизонтальный</p>
-					  </div> -->
-<!-- 					  <div class="form-group form__with-radio">
-					    <input name="banner_height" type="number" min=0 max=999999 class="form-control" required placeholder="Высота">
-						<label class="radio-inline">
-						  <input type="radio" name="height_unit_radio" value="%"> %
-						</label>
-						<label class="radio-inline">
-						  <input type="radio" name="height_unit_radio" checked value="px"> px
-						</label>
-					      <p class="help-block"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> указывай 100% если кетфиш вертикальный</p>
-					  </div> -->
-
 					  <div class="form-group">
 					    <input type="text" name="banner_link" class="form-control" placeholder="Ссылка перехода (необязательно)">
 					  </div>

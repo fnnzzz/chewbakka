@@ -21,6 +21,8 @@
     "Respond": "~1.4.2",
     "fontawesome": "~4.4.0",
     "bourbon": "~4.2.6",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "loaders.css": "~0.1.2",
+    "sweetalert": "~1.1.3"
   }
 }

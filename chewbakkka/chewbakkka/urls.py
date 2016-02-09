@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     # url(r'^test\.html$', TemplateView.as_view(template_name='test.html')),
     url(r'^$', IndexView.as_view(), name='index'),
     url(r'^do-banner/(?P<area>\S+)/(?P<format>\S+)$', DoBanner.as_view(), name='do-banner'),
+    url(r'^download-banner/(?P<banner_id>\d+)$', DownloadBanner.as_view(), name='download-banner'),
     url(r'^admin/', include(admin.site.urls)),
     # url(r'admixer/^$', BannerDo.as_view(), name='admixer'),
 )

@@ -189,6 +189,8 @@ PIPELINE_CSS = {
           'bootstrap/dist/css/bootstrap.min.css',
           'bootstrap/dist/css/bootstrap-theme.min.css',
           'fontawesome/scss/font-awesome.scss',
+          'loaders.css/loaders.min.css',
+          'sweetalert/dist/sweetalert.css',
         ),
         'output_filename': 'css/libs.css',
         'variant': 'datauri',
@@ -207,6 +209,7 @@ PIPELINE_JS = {
         'source_filenames': (
           'jquery/dist/jquery.min.js',
           'bootstrap/dist/js/bootstrap.min.js',
+          'sweetalert/dist/sweetalert.min.js',
         ),
         'output_filename': 'js/libs.js',
     },
